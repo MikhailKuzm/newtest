@@ -8,9 +8,9 @@ LABEL org.label-schema.license="GPL-2.0" \
 ## Set a default user. Available via runtime flag `--user docker`
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library
 ## User should also have & own a home directory (for rstudio or linked volumes to work properly).
-RUN useradd user1 \
+RUN useradd -u 455 user1 \
 	&& mkdir /home/newdocker \
-	&& chown user1:newdocker /home/newdocker \
+	&& chown -R user1:newdocker /home/newdocker \
 	&& addgroup user1 staff
 
 
