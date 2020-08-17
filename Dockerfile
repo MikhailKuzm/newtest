@@ -59,7 +59,8 @@ RUN apt-get update \
 	&& install.r docopt \
 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
 	&& rm -rf /var/lib/apt/lists/*
-  
+ 
+ # basic shiny functionality
 RUN sudo R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" \
 && R -e "install.packages(c('shiny'), repos='http://cran.rstudio.com/')" \
 && R -e "install.packages(c('dplyr'), repos='http://cran.rstudio.com/')" \
