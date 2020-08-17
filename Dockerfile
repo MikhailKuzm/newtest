@@ -61,7 +61,7 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
  
  # basic shiny functionality
-RUN sudo R -e "install.packages('stringi')" \
+RUN R -e "install.packages('stringi')" \
 && R -e "install.packages('shiny')" \
 && R -e "install.packages('dplyr')" \
 && R -e "install.packages('data.table)" \
