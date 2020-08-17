@@ -10,7 +10,7 @@ LABEL org.label-schema.license="GPL-2.0" \
 ## User should also have & own a home directory (for rstudio or linked volumes to work properly).
 RUN useradd -u 455 user1 \
 	&& mkdir /home/newdocker \
-	&& chown -R user1:newdocker /home/newdocker \
+	&& chown -R user1:user1 /home/newdocker \
 	&& addgroup user1 staff
 
 
