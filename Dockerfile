@@ -64,7 +64,7 @@ RUN apt-get update \
 RUN R -e "install.packages('stringi')" \
 && R -e "install.packages('shiny')" \
 && R -e "install.packages('dplyr')" \
-&& R -e "install.packages('data.table)" \
+&& R -e "install.packages('data.table')" \
 && R -e "install.packages('ggolot2')" \
 && R -e "install.packages('datasets')"  
  
