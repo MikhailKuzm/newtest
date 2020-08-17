@@ -10,7 +10,7 @@ LABEL org.label-schema.license="GPL-2.0" \
 ## User should also have & own a home directory (for rstudio or linked volumes to work properly).
 RUN useradd user1 \
 	&& mkdir /home/newdocker \
-	&& chown user1:user1 /home/newdocker \
+	&& chown user1:newdocker /home/newdocker \
 	&& addgroup user1 staff
 
 
@@ -71,4 +71,4 @@ RUN sudo R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" 
 VOLUME  /home/newdocker
 EXPOSE 1111
 USER user1
-CMD ["R", "-e shiny::runApp('/srv/newcontainer/',port=1111,host='0.0.0.0')"]
+CMD ["R", "-e shiny::runApp('/home/newdocker',port=1111,host='0.0.0.0')"]
