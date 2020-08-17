@@ -11,6 +11,7 @@ LABEL org.label-schema.license="GPL-2.0" \
 RUN useradd user1 \
 	&& mkdir /home/newdocker \
 	&& chown user1:user1 /home/newdocker \
+	&& addgroup user1 staff
 
 
 RUN apt-get update \
