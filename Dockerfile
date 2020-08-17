@@ -61,14 +61,13 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
  
  # basic shiny functionality
-RUN sudo R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('shiny'), repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('dplyr'), repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('data.table'), repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('RPostgres'), repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('ggolot2'), repos='http://cran.rstudio.com/')" \
-&& R -e "install.packages(c('datasets'), repos='http://cran.rstudio.com/')" 
-
+RUN sudo R -e "install.packages('stringi')" \
+&& R -e "install.packages('shiny')" \
+&& R -e "install.packages('dplyr')" \
+&& R -e "install.packages('data.table)" \
+&& R -e "install.packages('ggolot2')" \
+&& R -e "install.packages('datasets')"  
+ 
 VOLUME  /home/newdocker
 EXPOSE 1111
 USER user1
